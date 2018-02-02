@@ -6,16 +6,23 @@ const app = express();
 const textToJSON = require("./lib/textToJSON");
 
 app.set("port",(process.env.PORT || 3000));
+
+app.use((req,res,next)=>{
+    if(req.method !== "POST"){
+        res.status(406).json({
+            code:-1,
+            msg:"This app is accept only POST request.Please try make a POST request to /searchRecord"
+        })
+    } else {
+        next();
+    }
+})
 app.use(logger());
 app.use(bodyParser.json('application/*+json'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 app.use(bodyParser.text());
 app.use(textToJSON); // if content-type is text/plain , it converts to JSON
-
-app.get('/',(req,res)=>{
-    res.json("please make a POST request to /searchRecord");
-});
 
 app.post('/searchRecord',function(req,res){
 
