@@ -1,0 +1,32 @@
+{
+  "name": "getirtask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harunkelesoglu/getirbitaksi.git"
+  },
+  "keywords": [
+    "bitaksi",
+    "hackathon",
+    "getir"
+  ],
+  "author": "harunkeles0glu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harunkelesoglu/getirbitaksi/issues"
+  },
+  "homepage": "https://github.com/harunkelesoglu/getirbitaksi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.1",
+    "mongoose": "^5.0.2",
+    "morgan": "^1.9.0"
+  }
+}
